@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}
+    Authenticate - {{block.super}}
+{% endblock %}
+{% block auth %}
+    <form action="/home/login/" method="post">
+        {% csrf_token %}
+        <input type="email" name="email" placeholder="Email" required /> <br>
+        <input type="text" name="otp" placeholder="OTP" required /> <br>
+        <button type="button" value="send">Send</button>
+    </form>
+{% endblock %}

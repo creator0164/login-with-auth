@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}
+    Account - {{block.super}}
+{% endblock %}
+{% block user %}
+{% if user.is_authenticated %}
+    <h2>Welcome {{request.session.user}}</h2>
+    <a href="/signout/">Sign Out</a>
+    <a href="/account/profile/">Profile</a>
+{% endif %}
+{% endblock %}
